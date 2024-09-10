@@ -17,6 +17,7 @@ class anamoly_detection:
         self.plots_path = plots_path
         
     def line_plot(self):
+        print('plotting the line plots.....')
         for column in self.float_columns:
             plt.figure(figsize=(30, 5))
             plt.plot(data['time'], data[column], label=column)
@@ -31,6 +32,7 @@ class anamoly_detection:
                 
     
     def scatter_plot(self):
+        print('plotting the scatter plots.....')
         for column in self.float_columns:
             plt.figure(figsize=(30, 5))
             plt.scatter(data['time'], data[column], label=column)
@@ -46,6 +48,7 @@ class anamoly_detection:
     
     
     def pdf_plots(self):
+        print('plotting the pdf plots.....')
         for column in self.float_columns:
             plt.figure(figsize=(30, 5))  
             sns.kdeplot(data[column], label=column, fill=True)  
@@ -72,7 +75,7 @@ class anamoly_detection:
         df_scaled = self.standardize_data()
         data['anomaly'] = iso_forest.fit_predict(df_scaled)
         data['anomaly'] = data['anomaly'].apply(lambda x: 1 if x == -1 else 0)
-        data.to_csv('anamoly_added_data.csv', index=False)
+        data.to_csv(r'.\datasets\anamoly_added_data.csv', index=False)
         print('anamoly detection is over......')
         print(data['anomaly'].value_counts())
         
@@ -104,8 +107,8 @@ class anamoly_detection:
         
 if __name__ == '__main__':
     
-    plots_path = r'C:\Users\admin\OneDrive - Talentpace\Desktop\MyProjects\ML Projects\Hima_gaaru\plots'
-    data_file_path = r"C:\Users\admin\Assignment\data.csv"
+    plots_path = r'.\plots'
+    data_file_path = r".\datasets\data.csv"
     float_columns = ['Cyclone_Inlet_Gas_Temp', 'Cyclone_Gas_Outlet_Temp', 'Cyclone_Outlet_Gas_draft', 
                      'Cyclone_cone_draft', 'Cyclone_Inlet_Draft', 'Cyclone_Material_Temp']
 
@@ -114,8 +117,9 @@ if __name__ == '__main__':
     
     ad = anamoly_detection(data_file_path, float_columns, data, plots_path)
     ad.line_plot()
+    ad.scatter_plot()
+    ad.pdf_plots()
     print(data.head())
-    
     ad.anamoly_plot()
 
 
