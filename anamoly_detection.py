@@ -30,7 +30,7 @@ class anamoly_detection:
             plt.close()
                 
     
-    def line_plot(self):
+    def scatter_plot(self):
         for column in self.float_columns:
             plt.figure(figsize=(30, 5))
             plt.scatter(data['time'], data[column], label=column)
