@@ -18,12 +18,15 @@ duration of 3 years.
 5. Cyclone_Inlet_Draft – Draft (pressure) of gas at inlet of cyclone
 6. Cyclone_Material_Temp – Temperature of the material at the outlet of the cyclone.
 # Expected Output:
-Prepare a zip/rar folder with the following files and share with the Algo8's team, as
-indicated. Name of the folder must be candidate’s “FirstName_LastName”
+Prepare a zip/rar folder with the following files and share with the Algo8's team, as indicated. 
+### Name of the folder must be candidate’s “FirstName_LastName”
 7. Provide the source code file/s of your work
 8. A ppt with 3-5 slides detailing the following:
-• Data preparation – What kind of treatment or processing did you apply on the raw
-data possible. What was the reasoning behind your specific decisions?
-• Analysis strategy – Detail the methodology you followed to analyze the data.
-• Insights – What did you find out from the data provided. Where are the abnormal
-periods and how did you identify them? 
+## Data preparation:
+ What kind of treatment or processing did you apply on the raw data possible.
+ What was the reasoning behind your specific decisions?
+## Analysis strategy:
+ Detail the methodology you followed to analyze the data.
+## Insights :
+ What did you find out from the data provided. Where are the abnormal
+ periods and how did you identify them? 
